@@ -15,14 +15,14 @@ exports.signup = [
         }
 
         try {
-            const { username, email, password ,mobile} = req.body;
+            const { username, email, password, mobile } = req.body;
 
             const existingUser = await Admin.findOne({ email });
             if (existingUser) {
                 return res.status(400).json({ message: 'Admin already exists' });
             }
 
-            const admin = new Admin({ username, email,mobile, password });
+            const admin = new Admin({ username, email, mobile, password });
             await admin.save();
 
             res.status(201).send('Admin created successfully');
@@ -43,7 +43,7 @@ exports.login = [
         }
         try {
             const { email, password } = req.body;
-
+            console.log(req.body, 'req.body')
             const admin = await Admin.findOne({ email });
             if (!admin) {
                 return res.status(400).json({ message: 'Invalid credentials' });

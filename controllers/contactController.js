@@ -2,8 +2,8 @@ const Contact = require("../models/ContactModel");
 
 exports.submitContact = async (req, res) => {
   try {
-    const { name, email, mobile, message,states,city,Course } = req.body;
-    const contact = new Contact({ name, email, message, mobile,states,city,Course });
+    const { name, email, mobile, message, states, city, course } = req.body;
+    const contact = new Contact({ name, email, message, mobile, states, city, course });
     await contact.save();
     res.status(201).send("Contact message sent successfully");
   } catch (error) {

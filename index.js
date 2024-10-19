@@ -32,12 +32,12 @@ app.get("/apitest", (req, res) => {
 });
 
 
-app.use('/auth', authRoutes);
-app.use('/user', userRoutes);
-app.use('/grievance', grievanceRoutes);
-app.use('/contact', contactRoutes);
-app.use('/blogs', blogRoutes);
-app.use('/emails', emailRoutes);
+app.use('/api/v1/admin', authRoutes);
+app.use('/api/v1/user', userRoutes);
+app.use('/api/v1/grievance', grievanceRoutes);
+app.use('/api/v1/contact', contactRoutes);
+app.use('/api/v1/blogs', blogRoutes);
+app.use('/api/v1/emails', emailRoutes);
 
 
 app.listen(PORT, () => {

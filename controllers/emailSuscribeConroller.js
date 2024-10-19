@@ -10,6 +10,7 @@ exports.submitEmailSuscribe = async (req, res) => {
         res.status(400).send(error.message);
     }
 };
+
 exports.getEmailSuscribes = async (req, res) => {
     try {
         const emailSuscribes = await EmailSuscribe.find().sort({ createdAt: -1 });
